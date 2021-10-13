@@ -2,6 +2,7 @@ package com.example.candybattle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
@@ -26,7 +27,8 @@ public class Conexion extends AppCompatActivity {
         conectarBtn.setOnClickListener(
                 (v) -> {
 
-
+                    Intent conexion = new Intent( this, Control.class);
+                    startActivity(conexion);
 
                 });
     }
