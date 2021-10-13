@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CandyBattle">
         <activity
+            android:name=".Instrucciones"
+            android:exported="true" />
+        <activity
+            android:name=".Conexion"
+            android:exported="true" />
+        <activity
             android:name=".Finalizar"
             android:exported="true" />
         <activity
