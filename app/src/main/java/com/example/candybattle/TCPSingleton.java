@@ -77,12 +77,12 @@ public class TCPSingleton extends Thread {
 
     }
 
-    public void enviarMensaje(String msg) {
+    public void enviarMensaje(String msj) {
 
         new Thread(
                 () -> {
                     try {
-                        writer.write(msg + "\n");
+                        writer.write(msj + "\n");
                         writer.flush();
                     } catch (IOException e) {
                         e.printStackTrace();

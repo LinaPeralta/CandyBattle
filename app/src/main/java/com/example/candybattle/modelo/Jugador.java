@@ -3,22 +3,59 @@ package com.example.candybattle.modelo;
 import java.util.ArrayList;
 
 public class Jugador {
-    private int x;
+    private int x,y;
     private String accion; //lo que hace el jugador
     private int velocidad; //velocidad de movimiento
-    private ArrayList<Bala> balitas;
+    private ArrayList<Bala> balas;
 
     public Jugador (int x, int y, String accion) {
         this.x = x;
-        this.velocidad = 20;
-        this.accion= accion;
+        this.y=y;
+        this.velocidad = 30;
+        this.accion = accion;
+        //array
+        balas = new ArrayList <>();
 
-        //balitas array
-        balitas = new ArrayList <>();
     }
 
-    public Jugador() {
+    public Jugador () {
+    }
 
+    public void moverJugador() {
+        switch (accion) {
+            case "izquierda":
+                x-=velocidad;
+                break;
+            case "derecha":
+                x+=velocidad;
+                break;
+            case "disparo":
+                crearBalita();
+                System.out.println("disparo");
+            case "quieto nene":
+                break;
+        }
+
+    }
+
+
+
+
+    private void crearBalita() {
+
+        Bala bala = new Bala(x, y);
+        balas.add(bala);
+
+
+
+    }
+
+    public void eliminarBalita() {
+        for (int i = 0; i < balas.size(); i++) {
+            if (balas.get(i).getY() < 0) {
+                balas.remove(i);
+            }
+        }
     }
 
     public int getX() {
@@ -29,6 +66,14 @@ public class Jugador {
         this.x = x;
     }
 
+    public int getY() {
+        return y;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
+
     public String getAccion() {
         return accion;
     }
@@ -37,11 +82,11 @@ public class Jugador {
         this.accion = accion;
     }
 
-    public int getVelocidad() {
-        return velocidad;
+    public ArrayList<Bala> getBalitas() {
+        return balas;
     }
 
-    public void setVelocidad(int velocidad) {
-        this.velocidad = velocidad;
+    public void setBalitas(ArrayList<Bala> balitas) {
+        this.balas = balitas;
     }
 }
