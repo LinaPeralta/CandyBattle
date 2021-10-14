@@ -9,6 +9,7 @@ import android.widget.Button;
 public class Instrucciones extends AppCompatActivity {
 
     private Button OkBtn;
+    private TCPSingleton tcp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,11 +17,12 @@ public class Instrucciones extends AppCompatActivity {
         setContentView(R.layout.activity_instrucciones);
 
         OkBtn = findViewById(R.id.OkBtn);
+        tcp= TCPSingleton.getInstance();
 
 
         OkBtn.setOnClickListener(
                 (v) -> {
-
+                    tcp.enviarMensaje("ya entendi bueno?");
                     Intent instrucciones = new Intent( this, Conexion.class);
                     startActivity(instrucciones);
 

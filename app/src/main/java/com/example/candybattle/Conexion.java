@@ -12,6 +12,7 @@ public class Conexion extends AppCompatActivity {
     private Button conectarBtn;
     private EditText nombreTxt;
     private EditText ipTxt;
+    private TCPSingleton tcp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +23,14 @@ public class Conexion extends AppCompatActivity {
         nombreTxt = findViewById(R.id.nombreTxt);
         ipTxt = findViewById(R.id.ipTxt);
 
+        tcp= TCPSingleton.getInstance();
+
 
 
         conectarBtn.setOnClickListener(
                 (v) -> {
 
+                    tcp.enviarMensaje("a la conexion bruno");
                     Intent conexion = new Intent( this, Control.class);
                     startActivity(conexion);
 

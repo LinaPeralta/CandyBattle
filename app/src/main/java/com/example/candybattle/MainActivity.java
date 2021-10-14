@@ -11,6 +11,7 @@ public class MainActivity extends AppCompatActivity {
 
 
     private Button jugarBtn;
+    private TCPSingleton tcp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,11 +19,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         jugarBtn = findViewById(R.id.jugarBtn);
+        tcp= TCPSingleton.getInstance();
 
 
         jugarBtn.setOnClickListener(
                 (v) -> {
 
+                    tcp.enviarMensaje("y de que va esto?");
                     Intent main = new Intent( this, Instrucciones.class);
                     startActivity(main);
 

@@ -13,6 +13,8 @@ public class Finalizar extends AppCompatActivity {
     private ImageView ganadorImg;
     private ImageView perdedorImg;
 
+    private TCPSingleton tcp;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +23,8 @@ public class Finalizar extends AppCompatActivity {
         okBtn = findViewById(R.id.okBtn);
         ganadorImg = findViewById(R.id.ganadorImg);
         perdedorImg = findViewById(R.id.perdedorImg);
+
+        tcp= TCPSingleton.getInstance();
 
     }
 }
