@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         jugarBtn = findViewById(R.id.jugarBtn);
+
         tcp= TCPSingleton.getInstance();
 
 
