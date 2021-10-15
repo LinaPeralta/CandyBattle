@@ -58,7 +58,7 @@
         android:id="@+id/jugadorTxt"
         android:layout_width="109dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:text="JUGADOR"
         android:textColor="#BB632B"
         android:textSize="24sp"

@@ -6,12 +6,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class Conexion extends AppCompatActivity {
 
     private Button conectarBtn;
-    private EditText nombreTxt;
-    private EditText ipTxt;
+    private TextView nombreTxt;
     private TCPSingleton tcp;
 
     @Override
@@ -20,6 +20,7 @@ public class Conexion extends AppCompatActivity {
         setContentView(R.layout.activity_conexion);
 
         conectarBtn = findViewById(R.id.conectarBtn);
+        nombreTxt = findViewById(R.id.nombreTxt);
         tcp= TCPSingleton.getInstance();
 
 
