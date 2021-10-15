@@ -20,9 +20,6 @@ public class Conexion extends AppCompatActivity {
         setContentView(R.layout.activity_conexion);
 
         conectarBtn = findViewById(R.id.conectarBtn);
-        nombreTxt = findViewById(R.id.nombreTxt);
-        ipTxt = findViewById(R.id.ipTxt);
-
         tcp= TCPSingleton.getInstance();
 
 

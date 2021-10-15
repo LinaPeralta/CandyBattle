@@ -12,6 +12,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button jugarBtn;
     private TCPSingleton tcp;
+    private String pantalla;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,11 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
         tcp= TCPSingleton.getInstance();
 
+        pantalla="cambio";
 
         jugarBtn.setOnClickListener(
                 (v) -> {
 
                     tcp.enviarMensaje("y de que va esto?");
+                    tcp.enviarMensaje(pantalla);
                     Intent main = new Intent( this, Instrucciones.class);
                     startActivity(main);
 

@@ -29,6 +29,7 @@ public class TCPSingleton extends Thread {
     }
 
     BufferedWriter writer;
+    BufferedReader reader;
     private Socket socket;
 
 
@@ -38,7 +39,6 @@ public class TCPSingleton extends Thread {
     public  void setObserver(OnMessageListener observer){
         this.observer= observer;
     }
-
 
     @Override
     public void run() {
@@ -50,7 +50,7 @@ public class TCPSingleton extends Thread {
                         InputStream is = socket.getInputStream();
                         OutputStream out = socket.getOutputStream();
 
-                        BufferedReader reader = new BufferedReader(new InputStreamReader(is));
+                        reader = new BufferedReader(new InputStreamReader(is));
                         writer = new BufferedWriter(new OutputStreamWriter(out));
 
                         while (true) {
@@ -94,7 +94,23 @@ public class TCPSingleton extends Thread {
 
     }
 
+    public void recibirMensaje() {
+        new Thread(
+                () -> {
+                    while(true) {
+                        try {
+                            String msj = reader.readLine();
+                            observer.notificarMensaje(msj);
 
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+    }
 
+    public OnMessageListener getObserver() {
+        return observer;
+    }
 
 }

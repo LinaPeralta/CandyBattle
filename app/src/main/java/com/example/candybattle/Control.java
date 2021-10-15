@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.candybattle.modelo.Jugador;
@@ -15,6 +16,8 @@ public class Control extends AppCompatActivity implements View.OnClickListener, 
     private Button balaBtn;
     private Button izqBtn;
     private Button derechaBtn;
+
+    private TextView puntajeTxt;
 
     private TCPSingleton tcp;
 
@@ -30,6 +33,8 @@ public class Control extends AppCompatActivity implements View.OnClickListener, 
         balaBtn = findViewById(R.id.balaBtn);
         izqBtn = findViewById(R.id.izqBtn);
         derechaBtn = findViewById(R.id.derechaBtn);
+
+        puntajeTxt= findViewById(R.id.puntajeTxt);
 
         tcp= TCPSingleton.getInstance();
         tcp.setObserver(this);
@@ -77,7 +82,8 @@ public class Control extends AppCompatActivity implements View.OnClickListener, 
 
     @Override
     public void notificarMensaje(String msj) {
-
-        Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
+        runOnUiThread(()->{
+            puntajeTxt.setText("PUNTAJE: "+msj);
+        });
     }
 }
