@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
 
         tcp= TCPSingleton.getInstance();
 
-        pantalla="cambio";
+        pantalla="instrucciones";
 
         jugarBtn.setOnClickListener(
                 (v) -> {

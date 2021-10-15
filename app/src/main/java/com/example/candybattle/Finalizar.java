@@ -21,10 +21,10 @@ public class Finalizar extends AppCompatActivity {
         setContentView(R.layout.activity_finalizar);
 
         okBtn = findViewById(R.id.okBtn);
-        ganadorImg = findViewById(R.id.ganadorImg);
-        perdedorImg = findViewById(R.id.perdedorImg);
 
         tcp= TCPSingleton.getInstance();
 
     }
+
+
 }
