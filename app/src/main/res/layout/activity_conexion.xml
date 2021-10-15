@@ -27,20 +27,20 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.116" />
+            app:layout_constraintVertical_bias="0.091" />
 
         <Button
             android:id="@+id/conectarBtn"
             android:layout_width="150dp"
             android:layout_height="53dp"
-            android:layout_marginTop="308dp"
+            android:layout_marginTop="508dp"
             android:background="@drawable/button2"
             android:backgroundTint="#BB632B"
             android:text="Conectar"
             android:textColor="#F3CF8D"
             android:textSize="24sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -48,11 +48,10 @@
             android:id="@+id/nombreTxt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="192dp"
+            android:layout_marginTop="220dp"
             android:text="JUGADOR"
             android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.499"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 

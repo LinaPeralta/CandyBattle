@@ -43,7 +43,7 @@
 
     <TextView
         android:id="@+id/puntajeTxt"
-        android:layout_width="105dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PUNTAJE"
         android:textColor="#BB632B"
@@ -56,9 +56,9 @@
 
     <TextView
         android:id="@+id/jugadorTxt"
-        android:layout_width="109dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="96dp"
         android:text="JUGADOR"
         android:textColor="#BB632B"
         android:textSize="24sp"
