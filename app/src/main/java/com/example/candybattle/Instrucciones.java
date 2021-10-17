@@ -22,7 +22,7 @@ public class Instrucciones extends AppCompatActivity {
 
         OkBtn.setOnClickListener(
                 (v) -> {
-                    tcp.enviarMensaje("ya entendi bueno?");
+
                     Intent instrucciones = new Intent( this, Conexion.class);
                     startActivity(instrucciones);
 

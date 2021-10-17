@@ -27,8 +27,7 @@ public class Conexion extends AppCompatActivity {
 
         conectarBtn.setOnClickListener(
                 (v) -> {
-
-                    tcp.enviarMensaje("a la conexion bruno"); // aja si bueno
+                    tcp.enviarMensaje("a la conexion bruno");
                     Intent conexion = new Intent( this, Control.class);
                     startActivity(conexion);
 

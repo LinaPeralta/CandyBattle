@@ -24,19 +24,16 @@ public class TCPSingleton extends Thread {
         return unicainstancia;
     }
 
-    private TCPSingleton() {
 
-    }
 
     BufferedWriter writer;
     BufferedReader reader;
     private Socket socket;
-
-
     private OnMessageListener observer;
 
 
     public  void setObserver(OnMessageListener observer){
+
         this.observer= observer;
     }
 
@@ -45,7 +42,7 @@ public class TCPSingleton extends Thread {
         new Thread(
                 () -> {
                     try {
-                        socket = new Socket("192.168.0.252", 5000);
+                        socket = new Socket("192.168.1.56", 5000);
 
                         InputStream is = socket.getInputStream();
                         OutputStream out = socket.getOutputStream();

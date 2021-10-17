@@ -55,23 +55,23 @@ public class Control extends AppCompatActivity implements View.OnClickListener, 
 
         switch (view.getId()){
             case R.id.balaBtn:
-                tcp.enviarMensaje("jajaj te balie");
-                jugador.setAccion("disparo");
+               //tcp.enviarMensaje("jajaj te balie");
+                jugador.setAccion("Disparo");
                 String json = gson.toJson(jugador);
                 tcp.enviarMensaje(json);
 
                 break;
 
             case R.id.izqBtn:
-                tcp.enviarMensaje("atrapame voy a la izquierda");
-                jugador.setAccion("izquierda");
+               //tcp.enviarMensaje("atrapame voy a la izquierda");
+                jugador.setAccion("Izquierda");
                 String jsonIz = gson.toJson(jugador);
                 tcp.enviarMensaje(jsonIz);
                 break;
 
             case R.id.derechaBtn:
-                tcp.enviarMensaje("soy rapido a la derecha nene");
-                jugador.setAccion("derecha");
+               // tcp.enviarMensaje("soy rapido a la derecha nene");
+                jugador.setAccion("Derecha");
                 String jsonDr = gson.toJson(jugador);
                 tcp.enviarMensaje(jsonDr);
 
@@ -83,7 +83,10 @@ public class Control extends AppCompatActivity implements View.OnClickListener, 
     @Override
     public void notificarMensaje(String msj) {
         runOnUiThread(()->{
-            puntajeTxt.setText("PUNTAJE: "+msj);
+            Toast.makeText(this, msj, Toast.LENGTH_SHORT).show();
+            puntajeTxt.setText(msj);
         });
     }
+
+
 }

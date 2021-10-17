@@ -23,16 +23,17 @@ public class Jugador {
 
     public void moverJugador() {
         switch (accion) {
-            case "izquierda":
+            case "Izquierda":
                 x-=velocidad;
                 break;
-            case "derecha":
+            case "Derecha":
                 x+=velocidad;
                 break;
-            case "disparo":
+            case "Disparo":
                 crearBalita();
                 System.out.println("disparo");
             case "quieto nene":
+                System.out.println("no me muevo jiji");
                 break;
         }
 
@@ -58,35 +59,11 @@ public class Jugador {
         }
     }
 
-    public int getX() {
-        return x;
-    }
-
-    public void setX(int x) {
-        this.x = x;
-    }
-
-    public int getY() {
-        return y;
-    }
-
-    public void setY(int y) {
-        this.y = y;
-    }
-
     public String getAccion() {
         return accion;
     }
 
     public void setAccion(String accion) {
         this.accion = accion;
-    }
-
-    public ArrayList<Bala> getBalitas() {
-        return balas;
-    }
-
-    public void setBalitas(ArrayList<Bala> balitas) {
-        this.balas = balitas;
     }
 }
